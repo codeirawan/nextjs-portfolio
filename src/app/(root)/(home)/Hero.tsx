@@ -21,7 +21,7 @@ export default function Hero() {
           "min-[347px]:text-2xl md:text-3xl",
         )}
       >
-        Hello World, <span className="gradient__text">I'm IRAWAN</span>
+        Hello World, <span className="gradient__text">I&apos;m IRAWAN</span>
         <div className="ml-1 inline-block animate-waving-hand">👋</div>
       </h1>
 
@@ -29,7 +29,7 @@ export default function Hero() {
         an experienced Front-End Web Developer with expertise in <span className="gradient__text"> React & Vue. </span><br />
         With over 4 years of hands-on experience, I excel in crafting polished websites.
         Proficient in <span className="gradient__text"> Laravel </span> for backend and full-stack development. <br />
-        Let's collaborate and bring your ideas to life.
+        Let&apos;s collaborate and bring your ideas to life.
       </p>
 
       <div className="mb-4 flex items-center gap-2">
