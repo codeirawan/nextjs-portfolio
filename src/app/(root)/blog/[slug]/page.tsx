@@ -44,50 +44,31 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  const blogs = (await getBlog()) as BlogItem[];
-
-  return blogs.map((blog) => ({
-    slug: blog.slug.current,
-  }));
-}
-
 export default async function BlogDetails({
   params,
 }: {
   params: { slug: string };
 }) {
-  const blog = (await getBlog(params.slug)) as BlogItem[];
-  const { image, title, releaseDate, readingTime, views, content } = blog[0];
 
   return (
     <div className="p-8">
       <section>
-        <Image
-          src={image}
-          alt="Photo taken from Unsplash"
-          width={1200}
-          height={480}
-          placeholder="blur"
-          blurDataURL={image}
-          className="rounded-md"
-        />
 
-        <h1 className="primary mt-4 text-2xl font-bold md:text-3xl">{title}</h1>
+        <h1 className="primary mt-4 text-2xl font-bold md:text-3xl"></h1>
 
         <p className="secondary mb-4 mt-1 text-sm font-medium leading-relaxed">
-          Written on {format(new Date(releaseDate), "MMMM dd, yyyy")} by IRAWAN
+          Written on {format(new Date(), "MMMM dd, yyyy")} by IRAWAN
         </p>
 
         <div className="flex gap-2 text-sm font-medium">
           <div className="flex items-center gap-1">
             <HiOutlineClock className="text-base" />
-            <span className="gradient__text">{readingTime}</span>
+            <span className="gradient__text">{}</span>
           </div>
           <div className="flex items-center gap-1">
             <HiOutlineEye className="text-base" />
             <span className="gradient__text">
-              {views?.toLocaleString() ?? "0"} views
+               views
             </span>
           </div>
         </div>
@@ -95,7 +76,6 @@ export default async function BlogDetails({
         <BreakLine decoration="border-dashed" />
 
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 lg:gap-8">
-          <Aside content={content} />
         </div>
 
         <DonateBox classname="w-64 lg:hidden" />
