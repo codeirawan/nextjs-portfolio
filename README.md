@@ -2,7 +2,7 @@
 
 # [codeirawan.vercel.app](https://codeirawan.vercel.app/)
 
-Personal website and blogs built using TypeScript, Next.js, Tailwind CSS, and Sanity as headless cms
+Personal website and blogs built using TypeScript, Next.js, and Tailwind CSS.
 
 </div>
 
@@ -36,14 +36,6 @@ Start the server
 
 To run this project, you will need to add the following environment variables to your .env file
 
-### [Sanity](https://www.sanity.io/)
-
-`NEXT_PUBLIC_SANITY_PROJECT_ID`
-
-`NEXT_PUBLIC_SANITY_DATASET`
-
-`NEXT_PUBLIC_SANITY_TOKEN`
-
 ### [Giscus](https://giscus.app/)
 
 `NEXT_PUBLIC_GISCUS_REPO`
@@ -65,8 +57,6 @@ To run this project, you will need to add the following environment variables to
 `MY_PASSWORD`
 
 ## Documentation
-
-[Sanity Studio](https://www.sanity.io/docs/sanity-studio)
 
 [Giscus](https://giscus.app/)
 

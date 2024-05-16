@@ -3,7 +3,6 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
-import { incrementViews } from "../../../sanity/action";
 
 interface Props {
   id: string;
@@ -32,7 +31,7 @@ export default function BlogCard({
 }: Props) {
   const handleCardClick = async () => {
     try {
-      await incrementViews(id);
+      console.log('page view');
     } catch (error) {
       console.error(error);
       throw error;

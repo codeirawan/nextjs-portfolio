@@ -1,8 +1,5 @@
 import PageTitle from "@/components/elements/PageTitle";
 import { REVALIDATE_INTERVAL } from "@/constants";
-import { getBlog } from "@/services/blog";
-import { BlogItem } from "@/types";
-import generateRssFeed from "@/utils/rss";
 import type { Metadata } from "next";
 import BlogSection from "./[slug]/BlogSection";
 
@@ -18,8 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-  const blogs = (await getBlog()) as BlogItem[];
-  generateRssFeed(blogs);
 
   return (
     <div className="p-8">
@@ -27,7 +22,7 @@ export default async function Blog() {
         title="Blog"
         description="Share thoughts and tutorials on web development."
       />
-      <BlogSection blogs={blogs} />
+      <BlogSection blogs={[]} />
     </div>
   );
 }
