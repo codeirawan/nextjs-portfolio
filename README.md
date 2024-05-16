@@ -36,14 +36,6 @@ Start the server
 
 To run this project, you will need to add the following environment variables to your .env file
 
-### [Spotify Developer](https://developer.spotify.com/)
-
-`SPOTIFY_CLIENT_ID`
-
-`SPOTIFY_CLIENT_SECRET`
-
-`SPOTIFY_REFRESH_TOKEN`
-
 ### [Sanity](https://www.sanity.io/)
 
 `NEXT_PUBLIC_SANITY_PROJECT_ID`
@@ -73,8 +65,6 @@ To run this project, you will need to add the following environment variables to
 `MY_PASSWORD`
 
 ## Documentation
-
-[Spotify Developer](https://developer.spotify.com/)
 
 [Sanity Studio](https://www.sanity.io/docs/sanity-studio)
 

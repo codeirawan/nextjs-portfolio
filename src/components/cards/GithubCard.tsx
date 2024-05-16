@@ -6,7 +6,7 @@ import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 import useSWR from "swr";
 
-export default function SpotifyCard({ display }: { display: string }) {
+export default function GithubCard({ display }: { display: string }) {
 
   return (
     <Link

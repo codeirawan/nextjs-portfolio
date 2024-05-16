@@ -1,7 +1,6 @@
 import { FOOTER_ITEMS, FOOTER_LINKS } from "@/constants/footer";
 import clsx from "clsx";
 import Link from "next/link";
-import SpotifyCard from "../cards/SpotifyCard";
 import BreakLine from "../elements/BreakLine";
 import Tooltip from "../elements/Tooltip";
 
@@ -11,8 +10,6 @@ export default function Footer() {
   return (
     <footer className="mb-[104px] px-8 md:mb-6">
       <BreakLine />
-
-      <SpotifyCard display="flex lg:hidden" />
 
       <ul
         className={clsx("mt-8 text-sm", "flex flex-wrap justify-center gap-5")}
