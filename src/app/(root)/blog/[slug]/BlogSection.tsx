@@ -1,17 +1,22 @@
 "use client";
+
+import * as React from "react";
 import BlogCard from "@/components/cards/BlogCard";
 import { BlogItem } from "@/types";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import * as React from "react";
 import Search from "../Search";
 
 export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
   const [search, setSearch] = React.useState<string>("");
   const [sortedBlogs, setSortedBlogs] = React.useState<BlogItem[]>([]);
-  const [filteredBlogs, setFilteredBlogs] = React.useState(sortedBlogs);
+  const [filteredBlogs, setFilteredBlogs] = React.useState<BlogItem[]>([]);
 
   const sortBlogsByDate = React.useCallback(() => {
+    if (!Array.isArray(blogs)) {
+      return;
+    }
+
     const sorted = [...blogs];
     sorted.sort((a, b) => {
       const dateA = new Date(a.releaseDate);
@@ -31,17 +36,16 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
   };
 
   React.useEffect(() => {
-    setFilteredBlogs(
-      sortedBlogs.filter(
-        (blog) =>
-          blog.title.toLowerCase().includes(search.toLowerCase()) ||
-          blog.description.toLowerCase().includes(search.toLowerCase()) ||
-          search
-            .toLowerCase()
-            .split(" ")
-            .every((tag) => blog.tags.includes(tag)),
-      ),
+    const filtered = sortedBlogs.filter(
+      (blog) =>
+        blog.title.toLowerCase().includes(search.toLowerCase()) ||
+        blog.description.toLowerCase().includes(search.toLowerCase()) ||
+        search
+          .toLowerCase()
+          .split(" ")
+          .every((tag) => blog.tags.includes(tag))
     );
+    setFilteredBlogs(filtered);
   }, [search, sortedBlogs]);
 
   const toggleTag = (tag: string) => {
@@ -70,8 +74,8 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
         (term) =>
           blog.title.toLowerCase().includes(term) ||
           blog.description.toLowerCase().includes(term) ||
-          blog.tags.includes(term),
-      ),
+          blog.tags.includes(term)
+      )
     );
 
     return (
@@ -118,7 +122,7 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
           className={clsx(
             "pb-12 pt-20",
             "lg:flex lg:justify-center",
-            "lg:h-80 lg:pb-0 lg:pt-8",
+            "lg:h-80 lg:pb-0 lg:pt-8"
           )}
         >
           <h2
@@ -126,7 +130,7 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
               "gradient__text",
               "m-auto w-fit",
               "text-lg  font-bold",
-              "md:text-xl",
+              "md:text-xl"
             )}
           >
             Sorry, not found :(

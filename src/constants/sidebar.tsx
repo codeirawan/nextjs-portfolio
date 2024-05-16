@@ -18,7 +18,7 @@ export const SIDEBAR_ITEMS = [
     pathname: "/projects",
     label: "Projects",
   },
-  // { icon: <TbWriting size={ICON_SIZE} />, pathname: "/blog", label: "Blog" },
+  { icon: <TbWriting size={ICON_SIZE} />, pathname: "/blog", label: "Blog" },
   {
     icon: <FaRegPaperPlane size={ICON_SIZE} />,
     pathname: "/contact",
