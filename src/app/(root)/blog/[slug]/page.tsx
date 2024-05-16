@@ -10,7 +10,6 @@ import { format } from "date-fns";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
-import Article from "./Article";
 import Aside from "./Aside";
 
 export const revalidate = REVALIDATE_INTERVAL;
@@ -96,7 +95,6 @@ export default async function BlogDetails({
         <BreakLine decoration="border-dashed" />
 
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 lg:gap-8">
-          <Article content={content} />
           <Aside content={content} />
         </div>
 
