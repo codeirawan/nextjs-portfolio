@@ -138,7 +138,8 @@ table {
   }
 
   *::-webkit-scrollbar-thumb {
-    @apply rounded-sm bg-[#B3FFAB];
+    @apply rounded-sm;
+    background-color: var(--primary-color);
   }
 
   *::-webkit-scrollbar-track {

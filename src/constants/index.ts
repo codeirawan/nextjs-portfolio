@@ -14,6 +14,9 @@ export const BLOG_API_ENDPOINT =
 export const PAGESPEED_CATEGORIES =
   "&category=accessibility&category=performance&category=best-practices&category=seo";
 
+export const PRIMARY_COLOR = "#297AA2";
+export const SECONDARY_COLOR = "#4B8267";
+
 const ONE_HOUR_IN_SECONDS = 3600;
 const ONE_DAY_IN_SECONDS = ONE_HOUR_IN_SECONDS * 24;
 const ONE_WEEK_IN_SECONDS = ONE_DAY_IN_SECONDS * 7;

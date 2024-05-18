@@ -1,6 +1,7 @@
-import ThemeButton from "@/components/elements/ThemeButton";
+import { PROFILE_PICTURE_URL } from "@/constants";
 import clsx from "clsx";
 import Image from "next/image";
+import ThemeButton from "@/components/elements/ThemeButton";
 
 export default function SidebarHeader() {
   return (
@@ -14,7 +15,7 @@ export default function SidebarHeader() {
     >
       <div className="flex items-center gap-4">
         <Image
-          src="https://res.cloudinary.com/dtgzydbp2/image/upload/v1715062524/irawan_ezwq9t.jpg"
+          src={PROFILE_PICTURE_URL}
           alt="Image Profile"
           className="border__color h-11 w-11 rounded-full"
           width={100}
@@ -23,7 +24,7 @@ export default function SidebarHeader() {
 
         <div className="hidden flex-col lg:flex">
           <h2 className="primary text-base font-medium md:text-lg">codeirawan</h2>
-          <p className="secondary text-sm md:text-base">FE</p>
+          <p className="secondary text-sm md:text-base">fullstack dev</p>
         </div>
       </div>
 
