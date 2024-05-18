@@ -21,7 +21,7 @@ export default function Header() {
 
       <div className="flex flex-col gap-1">
         <h2 className="primary font-medium md:text-lg">codeirawan</h2>
-        <p className="secondary text-sm md:text-base">Λ7214</p>
+        <p className="secondary text-sm md:text-base">fullstack dev</p>
       </div>
     </motion.header>
   );
