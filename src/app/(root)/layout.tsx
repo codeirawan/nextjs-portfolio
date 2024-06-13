@@ -1,9 +1,10 @@
+import "../globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { DEFAULT_METADATA } from "@/constants/metadata";
+import { Inter } from "next/font/google";
 import Layouts from "@/components/layouts";
 import Providers from "@/components/layouts/Providers";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../globals.css";
-import { DEFAULT_METADATA } from "@/constants/metadata";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,6 +49,7 @@ export default function RootLayout({
         <Providers>
           <Layouts>{children}</Layouts>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
