@@ -1,9 +1,9 @@
 import {
+  SiLaravel,
   SiNextdotjs,
-  SiReact,
-  SiTypescript,
-  SiTailwindcss,
   SiNodedotjs,
+  SiReact,
+  SiTailwindcss,
 } from "react-icons/si";
 
 export const ABOUT_TEXTS = [
@@ -20,14 +20,14 @@ export const ABOUT_TEXTS = [
 
 export const FAVORITE_STACKS = [
   {
-    icon: <SiTypescript color="#3078C7" />,
-    name: "Typescript",
+    icon: <SiLaravel color="#fb503b" />,
+    name: "Laravel",
   },
+  { icon: <SiNextdotjs />, name: "Next.js" },
+  { icon: <SiReact color="#149FCB" />, name: "React" },
   {
     icon: <SiTailwindcss color="#38BDF8" />,
-    name: "Tailwind",
+    name: "Tailwind CSS",
   },
-  { icon: <SiReact color="#149FCB" />, name: "React" },
-  { icon: <SiNextdotjs />, name: "Next.js" },
   { icon: <SiNodedotjs color="#418A3F" />, name: "Node.js" },
 ];
