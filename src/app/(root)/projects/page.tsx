@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/cards/ProjectCard";
 import PageTitle from "@/components/elements/PageTitle";
-import { PROJECTCARD_CONTENTS } from "@/constants/projects";
+import { PROJECT_CARD_CONTENTS } from "@/constants/projects";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function Projects() {
 
       <section className="lg:mb-20">
         <ul className="grid gap-8 sm:grid-cols-2">
-          {PROJECTCARD_CONTENTS.map((content, index) => (
+          {PROJECT_CARD_CONTENTS.map((content, index) => (
             <ProjectCard
               key={index}
               url={content.url}
