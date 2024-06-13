@@ -8,13 +8,13 @@ import {
 
 export const ABOUT_TEXTS = [
   {
-    text: "Hi! I'm IRAWAN. I started learning web development at the beginning of the pandemic. With not much else to do, I decided to begin my web development journey through web development forums. After that, I started watching various YouTube videos to delve deeper into web development, especially in terms of frontend development.",
+    text: "Hi! I'm Irawan, a proficient software developer specializing in full-stack development. My journey into web development began at the onset of the pandemic. With ample time at my disposal, I dove into web development forums and educational YouTube videos, focusing particularly on frontend/backend technologies.",
   },
   {
-    text: "I'm eager to expand my knowledge and skills in frontend development, as there is a vast array of technologies and concepts to explore. I find great satisfaction in the process of acquiring new information and techniques, and I'm highly motivated to keep learning and growing. I value constructive feedback as it helps me refine my abilities and enhance my overall proficiency.",
+    text: "With expertise in React.js, Vue.js, and Laravel frameworks, I am dedicated to crafting engaging and responsive web applications. I derive great satisfaction from learning new technologies and techniques, and I am always eager to expand my skill set. Constructive feedback is invaluable to me as it helps refine my abilities and enhance my overall proficiency.",
   },
   {
-    text: "Through this website, I plan to share my thoughts and showcase the projects I've worked on. I firmly believe that documenting what I've learned is an excellent method to solidify my understanding, and it also allows me to impart my knowledge with others. Please don't hesitate to reach out, and I'll be delighted to assist you!",
+    text: "I graduated with a degree in Informatics Engineering from Universitas Buana Perjuangan Karawang in 2020, achieving a GPA of 3.57. I have diverse experience working in startups, government, and corporate environments. Through this website, I aim to share my thoughts and showcase the projects I've worked on. Documenting my learning journey not only solidifies my understanding but also allows me to share valuable insights with others.",
   },
 ];
 
