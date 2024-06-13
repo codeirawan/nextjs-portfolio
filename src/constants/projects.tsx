@@ -4,11 +4,13 @@ import {
   SiDocker,
   SiInertia,
   SiLaravel,
+  SiNuxtdotjs,
   SiOpencv,
   SiPython,
   SiReact,
   SiTailwindcss,
   SiVercel,
+  SiVuedotjs,
 } from "react-icons/si";
 
 const ICON_SIZE = 24;
@@ -19,11 +21,13 @@ const ICON_STACK = {
   Docker: <SiDocker size={ICON_SIZE} color="#0DB7ED" />,
   Inertia: <SiInertia size={ICON_SIZE} color="#9355E9" />,
   Laravel: <SiLaravel size={ICON_SIZE} color="#F23B2F" />,
+  Nuxt: <SiNuxtdotjs size={ICON_SIZE} color="#00C678" />,
   OpenCV: <SiOpencv size={ICON_SIZE} color="#5C3EE8" />,
   Python: <SiPython size={ICON_SIZE} color="#3776AB" />,
   React: <SiReact size={ICON_SIZE} color="#149FCB" />,
   Tailwind: <SiTailwindcss size={ICON_SIZE} color="#06B6D4" />,
   Vercel: <SiVercel size={ICON_SIZE} color="#000000" />,
+  Vue: <SiVuedotjs size={ICON_SIZE} color="#43B882" />,
 };
 
 export const PROJECT_CARD_CONTENTS = [
@@ -39,7 +43,7 @@ export const PROJECT_CARD_CONTENTS = [
       { label: "Docker", icon: ICON_STACK.Docker },
     ],
     image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1715094185/bebas_akuntansi.png",
-    imageAlt: "bukupintar. Website Screenshot",
+    imageAlt: "bukupintar screenshot",
   },
   {
     url: "https://yoredu.app/",
@@ -51,7 +55,33 @@ export const PROJECT_CARD_CONTENTS = [
       { label: "Bootstrap", icon: ICON_STACK.Bootstrap },
     ],
     image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1715089658/yoredu.png",
-    imageAlt: "yoredu e-courses Website Screenshot",
+    imageAlt: "yoredu e-courses screenshot",
+  },
+  {
+    url: "https://projects.co.id/user/my_projects/show_thread/8e211b/slicing-2-image-to-responsive-page-with-tailwind",
+    name: "slicing like airbnb",
+    description:
+      "Slicing images to responsive page with Tailwind CSS.",
+    techStack: [
+      { label: "Vue.js", icon: ICON_STACK.Vue},
+      { label: "Nuxt.js", icon: ICON_STACK.Nuxt},
+      { label: "Tailwind CSS", icon: ICON_STACK.Tailwind },
+      { label: "Vercel", icon: ICON_STACK.Vercel },
+    ],
+    image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1718259014/950c938b-2e8d-4fde-b71b-a6bdf64c918a.png",
+    imageAlt: "slicing like airbnb screenshot",
+  },
+  {
+    url: "https://projects.co.id/user/my_projects/view/d6121b/view-antrian-dokter-antrian-farmasi-monitor-komputer-antrian-pdf-general-concent-pdf-uang-laravel-blade-snapy",
+    name: "antrian klinik",
+    description:
+      "View Antrian Dokter, Antrian Farmasi, Monitor komputer Antrian, PDF general concent, PDF UANG laravel blade SNAPY",
+    techStack: [
+      { label: "Laravel", icon: ICON_STACK.Laravel },
+      { label: "Bootstrap", icon: ICON_STACK.Bootstrap },
+    ],
+    image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1718258072/antrian-klinik.png",
+    imageAlt: "antrian klinik screenshot",
   },
   {
     url: "https://github.com/codeirawan/opencv-object-counting/",
