@@ -32,6 +32,19 @@ const ICON_STACK = {
 
 export const PROJECT_CARD_CONTENTS = [
   {
+    url: "https://kushikatsu-daruma.vercel.app/",
+    name: "kushikatsu daruma",
+    description:
+      "Landing page for Kushikatsu Daruma Indonesia, presenting authentic Osaka-style kushikatsu experience in Jakarta with responsive layout and modern frontend stack.",
+    techStack: [
+      { label: "React", icon: ICON_STACK.React },
+      { label: "Tailwind CSS", icon: ICON_STACK.Tailwind },
+      { label: "Vercel", icon: ICON_STACK.Vercel },
+    ],
+    image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1750666449/kushikatsu-daruma.png",
+    imageAlt: "kushikatsu daruma landing page screenshot",
+  },
+  {
     url: "https://bukupintar.app/",
     name: "bukupintar",
     description:
