@@ -37,9 +37,9 @@ export default function ProjectCard({
         aria-label={`Visit ${title} live production demo`}
         className={clsx("group cursor-pointer", "flex flex-col", "h-full")}
       >
-        <div>
+        <div className="aspect-[16/9] overflow-hidden rounded-t-md">
           <Image
-            className="h-auto w-auto rounded-t-md"
+            className="h-full w-full object-cover"
             width={1920}
             height={1080}
             src={image}
