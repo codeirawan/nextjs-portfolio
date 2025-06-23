@@ -32,6 +32,19 @@ const ICON_STACK = {
 
 export const PROJECT_CARD_CONTENTS = [
   {
+    url: "https://kensyu.vercel.app/",
+    name: "kensyu",
+    description:
+      "A Japanese dental internship search portal that helps students find nationwide clinical training programs with modern UI and responsive filtering system.",
+    techStack: [
+      { label: "React", icon: ICON_STACK.React },
+      { label: "Tailwind CSS", icon: ICON_STACK.Tailwind },
+      { label: "Vercel", icon: ICON_STACK.Vercel },
+    ],
+    image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1750671368/dentist-training.jpg",
+    imageAlt: "kensyu dental internship portal screenshot",
+  },
+  {
     url: "https://kushikatsu-daruma.vercel.app/",
     name: "kushikatsu daruma",
     description:
