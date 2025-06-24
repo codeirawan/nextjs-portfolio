@@ -32,6 +32,19 @@ const ICON_STACK = {
 
 export const PROJECT_CARD_CONTENTS = [
   {
+    url: "https://jurnale.vercel.app/",
+    name: "jurnale",
+    description:
+      "Accounting platform with journal entries, transaction tracking, and complete financial reporting tools.",
+    techStack: [
+      { label: "Laravel", icon: ICON_STACK.Laravel },
+      { label: "Bootstrap", icon: ICON_STACK.Bootstrap },
+      { label: "Vercel", icon: ICON_STACK.Vercel },
+    ],
+    image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1750735287/jurnale-accounting.png",
+    imageAlt: "jurnale accounting system screenshot",
+  },
+  {
     url: "https://kensyu.vercel.app/",
     name: "kensyu",
     description:
