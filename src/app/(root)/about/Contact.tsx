@@ -11,7 +11,7 @@ export default function Contact() {
       <h2 className="primary text-lg font-semibold md:text-xl">Contact</h2>
       <p className="secondary mt-4 leading-relaxed">
         Feel free to reach out if you require my insights on web development,
-        particularly when it comes to frontend tasks. I&apos;m more than willing
+        particularly when it comes to fullstacj developer tasks. I&apos;m more than willing
         to assist you. You can locate my email in the footer.
       </p>
     </motion.section>

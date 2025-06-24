@@ -14,7 +14,7 @@ export const CAREERS_LIST: CareerList[] = [
     website: "https://service.bridgenote.asia/",
     imageUrl:
       "https://res.cloudinary.com/dtgzydbp2/image/upload/v1715067999/bridgenote.webp",
-    role: "Frontend Developer",
+    role: "Fullstack Developer",
     companyName: "Bridgenote Indonesia",
     location: "Mega Kuningan, South Jakarta 12950",
     startWork: "Nov 2023",

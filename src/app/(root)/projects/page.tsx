@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects X-codeirawan",
   description:
-    "Discover my portfolio of frontend development projects, a curated collection showcasing my skills and creativity in web design and development. Immerse yourself in a diverse range of web solutions and innovative designs.",
+    "Discover my portfolio of fullstack development projects, a curated collection showcasing my skills and creativity in web design and development. Immerse yourself in a diverse range of web solutions and innovative designs.",
   alternates: {
     canonical: "https://codeirawan.vercel.app/projects",
   },
@@ -17,7 +17,7 @@ export default function Projects() {
     <div className="p-8">
       <PageTitle
         title="Projects"
-        description="Showcase of my works on frontend development."
+        description="Showcase of my works on fullstack development."
       />
 
       <section className="lg:mb-20">
