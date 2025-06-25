@@ -1,9 +1,9 @@
 import "../globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import { DEFAULT_METADATA } from "@/constants/metadata";
 import { Inter } from "next/font/google";
 import Layouts from "@/components/layouts";
 import Providers from "@/components/layouts/Providers";
+import ClientAnalytics from "@/components/layouts/ClientAnalytics";
 import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -38,18 +38,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body className={inter.className}>
         <Providers>
           <Layouts>{children}</Layouts>
         </Providers>
-        <Analytics />
+        <ClientAnalytics />
       </body>
     </html>
   );
