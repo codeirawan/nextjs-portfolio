@@ -1,9 +1,6 @@
 import PageTitle from "@/components/elements/PageTitle";
-import { REVALIDATE_INTERVAL } from "@/constants";
 import type { Metadata } from "next";
 import BlogSection from "./[slug]/BlogSection";
-
-export const revalidate = REVALIDATE_INTERVAL;
 
 export const metadata: Metadata = {
   title: "Blog X-codeirawan",
