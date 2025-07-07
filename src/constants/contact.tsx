@@ -2,8 +2,6 @@ import {
   FiLinkedin,
   FiGithub,
   FiInstagram,
-  FiTwitter,
-  FiFacebook,
 } from "react-icons/fi";
 
 const ICON_SIZE: number = 20;
@@ -26,17 +24,5 @@ export const CONTACT_ITEMS = [
     url: "https://www.instagram.com/codeirawan/",
     label: "Instagram",
     backgroundColor: "linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7)",
-  },
-  {
-    icon: <FiTwitter size={ICON_SIZE} />,
-    url: "https://twitter.com/codeirawan",
-    label: "Twitter",
-    backgroundColor: "#262626",
-  },
-  {
-    icon: <FiFacebook size={ICON_SIZE} />,
-    url: "https://www.facebook.com/codeirawan/",
-    label: "Facebook",
-    backgroundColor: "#0966FE",
   },
 ];
