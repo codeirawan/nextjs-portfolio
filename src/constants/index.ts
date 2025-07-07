@@ -1,10 +1,12 @@
+import CryptoJS from "crypto-js";
+
+const gravatarEmail = "codeirawan@gmail.com";
+const gravatarHash = CryptoJS.MD5(gravatarEmail.trim().toLowerCase()).toString();
+
+export const PROFILE_PICTURE_URL = `https://www.gravatar.com/avatar/${gravatarHash}?s=200&d=identicon`;
+
 export const CV_URL =
   "https://res.cloudinary.com/dtgzydbp2/image/upload/v1715065117/cv-codeirawan.jpg";
-
-// export const CV_URL = "/CV.pdf";
-
-export const PROFILE_PICTURE_URL =
-  "https://res.cloudinary.com/dtgzydbp2/image/upload/v1715062524/pp-codeirawan.jpg";
 
 export const BLOG_API_ENDPOINT =
   process.env.NODE_ENV === "production"
