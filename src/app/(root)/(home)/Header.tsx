@@ -17,6 +17,7 @@ export default function Header() {
         className="border__color h-11 w-11 rounded-full"
         width={100}
         height={100}
+        priority
       />
 
       <div className="flex flex-col gap-1">

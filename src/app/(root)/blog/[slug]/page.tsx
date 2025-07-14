@@ -2,7 +2,6 @@ import SubscribeCard from "@/components/cards/SubscribeCard";
 import BreakLine from "@/components/elements/BreakLine";
 import Comment from "@/components/elements/Comment";
 import DonateBox from "@/components/elements/DonateBox";
-import { REVALIDATE_INTERVAL } from "@/constants";
 import { DEFAULT_METADATA } from "@/constants/metadata";
 import { getBlog } from "@/services/blog";
 import { BlogItem } from "@/types";
@@ -12,7 +11,6 @@ import Image from "next/image";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
 import Aside from "./Aside";
 
-export const revalidate = REVALIDATE_INTERVAL;
 
 export async function generateMetadata({
   params,

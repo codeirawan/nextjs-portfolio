@@ -20,6 +20,7 @@ export default function SidebarHeader() {
           className="border__color h-11 w-11 rounded-full"
           width={100}
           height={100}
+          priority
         />
 
         <div className="hidden flex-col lg:flex">
