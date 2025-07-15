@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://codeirawan.vercel.app/blog</loc><lastmod>2025-07-15T01:14:00.965Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/contact</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/subscribe</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/about</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/guestbook</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/statistics</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/design</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/projects</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://codeirawan.vercel.app/audits</loc><lastmod>2025-07-15T01:14:00.966Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

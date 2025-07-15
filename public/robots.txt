@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /studio/
+
+# Host
+Host: https://codeirawan.vercel.app/
+
+# Sitemaps
+Sitemap: https://codeirawan.vercel.app/sitemap.xml
