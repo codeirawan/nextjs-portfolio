@@ -2,51 +2,10 @@ import SubscribeCard from "@/components/cards/SubscribeCard";
 import BreakLine from "@/components/elements/BreakLine";
 import Comment from "@/components/elements/Comment";
 import DonateBox from "@/components/elements/DonateBox";
-import { DEFAULT_METADATA } from "@/constants/metadata";
-import { getBlog } from "@/services/blog";
-import { BlogItem } from "@/types";
 import { format } from "date-fns";
-import type { Metadata } from "next";
-import Image from "next/image";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
-import Aside from "./Aside";
 
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const blog = (await getBlog(params.slug)) as BlogItem[];
-  const {
-    title,
-    description,
-    slug: { current },
-  } = blog[0];
-
-  return {
-    title: `${title} X-codeirawan`,
-    description: description,
-    openGraph: {
-      images: DEFAULT_METADATA.image,
-      url: `https://codeirawan.vercel.app/blog/${current}`,
-      siteName: DEFAULT_METADATA.siteName,
-      locale: DEFAULT_METADATA.locale,
-      type: "article",
-      authors: "codeirawan",
-    },
-    keywords: title,
-    alternates: {
-      canonical: `${process.env.DOMAIN}/${current}`,
-    },
-  };
-}
-
-export default async function BlogDetails({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function BlogDetails() {
 
   return (
     <div className="p-8">
