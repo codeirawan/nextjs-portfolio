@@ -3,6 +3,7 @@ import {
   FiGithub,
   FiInstagram,
 } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 const ICON_SIZE: number = 20;
 
@@ -24,5 +25,11 @@ export const CONTACT_ITEMS = [
     url: "https://www.instagram.com/codeirawan/",
     label: "Instagram",
     backgroundColor: "linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7)",
+  },
+  {
+    icon: <FaWhatsapp size={ICON_SIZE} />,
+    url: "https://wa.me/628999393662",
+    label: "WhatsApp",
+    backgroundColor: "#25D366",
   },
 ];
