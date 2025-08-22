@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/cards/ProjectCard";
 import PageTitle from "@/components/elements/PageTitle";
 import { PROJECT_CARD_CONTENTS } from "@/constants/projects";
+import { shuffleArray } from "@/utils/shuffle"; // <-- import shuffle
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default function Projects() {
+  // Shuffle projects each render
+  const shuffledProjects = shuffleArray(PROJECT_CARD_CONTENTS);
+
   return (
     <div className="p-8">
       <PageTitle
@@ -22,7 +26,7 @@ export default function Projects() {
 
       <section className="lg:mb-20">
         <ul className="grid gap-8 sm:grid-cols-2">
-          {PROJECT_CARD_CONTENTS.map((content, index) => (
+          {shuffledProjects.map((content, index) => (
             <ProjectCard
               key={index}
               url={content.url}
