@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Layouts from "@/components/layouts";
 import Providers from "@/components/layouts/Providers";
 import ClientAnalytics from "@/components/layouts/ClientAnalytics";
+import Script from "next/script";
 import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -50,6 +51,14 @@ export default function RootLayout({
       style={{ colorScheme: "light" }}
       suppressHydrationWarning
     >
+      <head>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1598409679842109"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={inter.className} suppressHydrationWarning>
         <Providers>
           <Layouts>{children}</Layouts>
