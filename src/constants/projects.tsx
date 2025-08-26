@@ -11,6 +11,9 @@ import {
   SiTailwindcss,
   SiVercel,
   SiVuedotjs,
+  SiCodeigniter,
+  SiPhp,
+  SiMysql,
 } from "react-icons/si";
 
 const ICON_SIZE = 24;
@@ -28,6 +31,9 @@ const ICON_STACK = {
   Tailwind: <SiTailwindcss size={ICON_SIZE} color="#06B6D4" />,
   Vercel: <SiVercel size={ICON_SIZE} color="#000000" />,
   Vue: <SiVuedotjs size={ICON_SIZE} color="#43B882" />,
+  CI4: <SiCodeigniter size={ICON_SIZE} color="#DD4814" />,
+  PHP: <SiPhp size={ICON_SIZE} color="#777BB4" />,
+  MySQL: <SiMysql size={ICON_SIZE} color="#00758F" />,
 };
 
 export const PROJECT_CARD_CONTENTS = [
@@ -146,5 +152,19 @@ export const PROJECT_CARD_CONTENTS = [
     ],
     image: "https://res.cloudinary.com/dtgzydbp2/image/upload/v1718251341/astro-portfolio.png",
     imageAlt: "astro portfolio screenshot",
+  },
+  {
+    url: "https://projects.co.id/public/past_projects/view/71bc1c/cari-jasa-integrasi-payment-gateway-tokopay-ke-website-ppob-codeigniter-4",
+    name: "cutboy topup games",
+    description:
+      "Platform H2H Top Up Game dan PPOB termurah di Indonesia. Menyediakan layanan top up game, voucher, dan pembayaran cepat aman.",
+    techStack: [
+      { label: "CodeIgniter 4", icon: ICON_STACK.CI4 },
+      { label: "PHP", icon: ICON_STACK.PHP },
+      { label: "MySQL", icon: ICON_STACK.MySQL },
+    ],
+    image:
+      "https://res.cloudinary.com/dtgzydbp2/image/upload/v1756201484/cutboy.jpg",
+    imageAlt: "CutBoy CI4 platform screenshot",
   },
 ];
