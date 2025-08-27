@@ -15,6 +15,7 @@ import {
   SiCodeigniter,
   SiPhp,
   SiMysql,
+  SiWordpress,
 } from "react-icons/si";
 
 export const ICON_SIZE = 24;
@@ -38,6 +39,7 @@ export const ICON_STACK: Record<
   "CodeIgniter 4": { icon: SiCodeigniter, color: "#DD4814" },
   PHP: { icon: SiPhp, color: "#777BB4" },
   MySQL: { icon: SiMysql, color: "#00758F" },
+  WordPress: { icon: SiWordpress, color: "#21759B" },
 };
 
 export const renderIcon = (techName: string) => {

@@ -78,5 +78,13 @@
     "tech": ["CodeIgniter 4", "PHP", "MySQL"],
     "image": "https://res.cloudinary.com/dtgzydbp2/image/upload/v1756201484/cutboy.jpg",
     "imageAlt": "CutBoy CI4 platform screenshot"
+  },
+  {
+    "url": "https://github.com/codeirawan/xendit-motopress-integration",
+    "name": "xendit motopress integration",
+    "description": "Custom integration of Xendit payment gateway with MotoPress Hotel Booking plugin. Direct integration without WooCommerce dependency.",
+    "tech": ["PHP", "WordPress"],
+    "image": "https://github.com/codeirawan/xendit-motopress-integration/blob/main/image/readme/1753987465865.png?raw=true",
+    "imageAlt": "xendit motopress hotel booking integration screenshot"
   }
 ]
