@@ -6,7 +6,6 @@ import Link from "next/link";
 import * as React from "react";
 import { TbArrowUpRight } from "react-icons/tb";
 import Ping from "../elements/Ping";
-import Tooltip from "../elements/Tooltip";
 
 export default function ProjectCard({
   url,
@@ -73,9 +72,7 @@ export default function ProjectCard({
           <ul className="flex flex-wrap gap-4">
             {techStack.map((tech, index) => (
               <li className="text-2xl" key={index}>
-                <Tooltip placement="top" label={tech.label}>
                   {tech.icon}
-                </Tooltip>
               </li>
             ))}
           </ul>
