@@ -1,58 +1,25 @@
+"use client";
 import "../globals.css";
-import { DEFAULT_METADATA } from "@/constants/metadata";
 import { Inter } from "next/font/google";
 import Layouts from "@/components/layouts";
 import Providers from "@/components/layouts/Providers";
 import ClientAnalytics from "@/components/layouts/ClientAnalytics";
 import Script from "next/script";
-import type { Metadata } from "next";
+import { useEffect } from "react";
+import { getActiveColorPalette } from "@/constants/palettes";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://codeirawan.vercel.app/"),
-  title: DEFAULT_METADATA.creator,
-  robots: DEFAULT_METADATA.robots,
-  keywords: DEFAULT_METADATA.keyword,
-  description: DEFAULT_METADATA.description,
-  creator: DEFAULT_METADATA.creator,
-  authors: {
-    name: DEFAULT_METADATA.creator,
-    url: DEFAULT_METADATA.url,
-  },
-  openGraph: {
-    url: DEFAULT_METADATA.url,
-    type: "website",
-    siteName: DEFAULT_METADATA.siteName,
-    description: DEFAULT_METADATA.description,
-    title: DEFAULT_METADATA.creator,
-    images: DEFAULT_METADATA.image,
-    locale: DEFAULT_METADATA.locale,
-  },
-  twitter: {
-    card: "summary_large_image",
-    creator: DEFAULT_METADATA.creator,
-    site: DEFAULT_METADATA.siteName,
-    title: DEFAULT_METADATA.creator,
-    description: DEFAULT_METADATA.description,
-    images: DEFAULT_METADATA.image,
-  },
-};
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    const palette = getActiveColorPalette("random");
+    document.documentElement.style.setProperty("--primary-color", palette.primary);
+    document.documentElement.style.setProperty("--secondary-color", palette.secondary);
+  }, []);
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
   return (
-    <html
-      lang="en"
-      className="light"
-      style={{ colorScheme: "light" }}
-      suppressHydrationWarning
-    >
+    <html lang="en" className="light" style={{ colorScheme: "light" }} suppressHydrationWarning>
       <head>
-        {/* Google AdSense */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1598409679842109"

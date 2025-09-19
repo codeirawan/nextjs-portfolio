@@ -16,5 +16,5 @@ export const BLOG_API_ENDPOINT =
 export const PAGESPEED_CATEGORIES =
   "&category=accessibility&category=performance&category=best-practices&category=seo";
 
-export const PRIMARY_COLOR = "#0EA5E9";   // Sky Blue-500
-export const SECONDARY_COLOR = "#A7F3D0"; // Mint Green-200
+export const PRIMARY_COLOR = "var(--primary-color)";
+export const SECONDARY_COLOR = "var(--secondary-color)";

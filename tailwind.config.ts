@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { PRIMARY_COLOR, SECONDARY_COLOR } from "./src/constants";
 
 const config: Config = {
   content: [
@@ -9,10 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-linear": `linear-gradient(to right, ${PRIMARY_COLOR}, ${SECONDARY_COLOR})`,
-      },
       colors: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
         // darkmode
         "primary-dark": "#F3F4F6",
         "secondary-dark": "#E5E7EB",
@@ -20,8 +18,11 @@ const config: Config = {
         "primary-light": "#1F2937",
         "secondary-light": "#374151",
         // gradient
-        "primary-gradient": `${PRIMARY_COLOR}`,
-        "secondary-gradient": `${SECONDARY_COLOR}`,
+        "primary-gradient": "var(--primary-color)",
+        "secondary-gradient": "var(--secondary-color)",
+      },
+      backgroundImage: {
+        "gradient-linear": "linear-gradient(to right, var(--primary-color), var(--secondary-color))",
       },
       keyframes: {
         wave: {
