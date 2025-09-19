@@ -1,0 +1,76 @@
+---
+title: "Memahami JavaScript Event Loop dengan Visualisasi Lengkap"
+description: "Deep dive ke dalam JavaScript Event Loop: bagaimana single-threaded engine bisa menangani asynchronous tasks tanpa blocking."
+tags: ["javascript", "event loop", "async", "web development"]
+date: "2025-09-19"
+image: "/images/blog/js-event-loop.png"
+readingTime: "4 min"
+published: true
+---
+
+Kalau kamu baru belajar JavaScript, mungkin pernah bingung: **kok JS bisa jalanin async tasks padahal dia single-threaded?** 🤔
+
+Jawabannya ada pada mekanisme yang disebut **Event Loop**. Artikel ini akan membahas secara mendalam bagaimana Event Loop bekerja, lengkap dengan contoh kode, visualisasi, dan best practices.
+
+## 1. Single Threaded Nature of JavaScript
+
+JavaScript di browser maupun Node.js berjalan pada **single-threaded environment**. Artinya, hanya ada **one call stack** yang bisa eksekusi satu task pada satu waktu.
+
+Kalau semua synchronous, maka UI akan freeze ketika ada task berat.
+
+## 2. Role of Event Loop
+
+Event Loop berfungsi sebagai "traffic controller" yang mengatur eksekusi:
+
+- **Call Stack** → tempat eksekusi synchronous code.
+- **Heap** → memory allocation.
+- **Task Queue (Callback Queue)** → antrian tasks dari asynchronous operations (`setTimeout`, DOM events, I/O).
+- **Microtask Queue** → untuk promises dan mutation observers.
+
+Visualisasi (disederhanakan):
+
+```
+[ Call Stack ] <---> [ Event Loop ] <---> [ Task Queue / Microtask Queue ]
+```
+
+## 3. Example Execution
+
+```js
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout Callback");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise Callback");
+});
+
+console.log("End");
+```
+
+Output-nya:
+
+```
+Start
+End
+Promise Callback
+Timeout Callback
+```
+
+Kenapa `Promise Callback` muncul lebih dulu? Karena **microtask queue memiliki prioritas lebih tinggi** dibanding task queue.
+
+## 4. Common Mistakes
+
+1. Mengira `setTimeout(fn, 0)` berarti langsung eksekusi. Salah, dia tetap masuk antrian.
+2. Tidak memahami blocking code: loop besar tetap bisa freeze UI meskipun ada async task.
+
+## 5. Best Practices
+
+- Gunakan `async/await` untuk readability.
+- Hindari heavy synchronous computation di main thread (pakai Web Workers).
+- Gunakan profiling tools di browser DevTools untuk debug performance.
+
+## 6. Conclusion
+
+Event Loop adalah **jantung concurrency di JavaScript** ❤️. Dengan memahaminya, kita bisa menulis code asynchronous yang lebih **efisien, readable, dan bebas bug**.

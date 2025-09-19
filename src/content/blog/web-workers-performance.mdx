@@ -1,0 +1,83 @@
+---
+title: "Mengoptimalkan Performa Frontend Anda dengan Web Workers"
+description: "Pelajari bagaimana Web Workers dapat membantu Anda menjalankan tugas komputasi berat tanpa memblokir UI, meningkatkan responsivitas aplikasi web Anda."
+tags:
+  ["web workers", "javascript", "frontend"]
+date: "2025-10-01"
+published: true
+image: "/images/blog/web-workers-performance.png"
+readingTime: "5 min"
+---
+
+Pernahkah Anda mengalami aplikasi web yang terasa lambat atau bahkan "freeze" saat menjalankan tugas-tugas berat seperti pemrosesan data besar, manipulasi gambar, atau perhitungan kompleks? 😩
+
+Ini adalah masalah umum di JavaScript karena sifatnya yang **single-threaded**. Artinya, semua eksekusi kode berjalan pada satu _thread_ utama yang juga bertanggung jawab untuk merender UI. Ketika thread ini sibuk dengan komputasi berat, UI tidak dapat diperbarui, menyebabkan pengalaman pengguna yang buruk.
+
+Untungnya, ada solusi elegan untuk masalah ini: **Web Workers**.
+
+---
+
+## 1. Apa itu Web Workers?
+
+Web Workers adalah fitur di browser yang memungkinkan Anda menjalankan script di background thread terpisah dari main thread (UI thread) halaman web Anda.
+
+**Kunci pentingnya:**
+
+- **Non-blocking** → Tugas komputasi berat dapat dieksekusi tanpa memblokir UI.
+- **Paralelisme** → Meskipun JS masih single-threaded di setiap worker, Anda dapat menjalankan beberapa worker secara paralel untuk membagi beban kerja.
+- **Isolasi** → Worker punya scope global sendiri, tidak punya akses langsung ke DOM. Komunikasi hanya via _message passing_.
+
+---
+
+## 2. Kapan Menggunakan Web Workers?
+
+Web Workers sangat cocok untuk skenario berikut:
+
+- **Pemrosesan Data Besar** → Filtering, sorting, analisis data di sisi klien.
+- **Komputasi Intensif** → Enkripsi/dekripsi, kompresi, algoritma kompleks.
+- **Manipulasi Gambar/Video** → Efek filter, resizing, transcoding.
+- **Pra-pemrosesan Data Fetch** → Misalnya hasil API besar yang perlu parsing berat.
+
+---
+
+## 3. Cara Kerja Web Workers (Dasar)
+
+Ada tiga jenis utama Web Workers:
+
+1. **Dedicated Workers** → satu worker untuk satu script induk.
+2. **Shared Workers** → bisa diakses oleh banyak script (window/iframe) dengan origin yang sama.
+3. **Service Workers** → untuk caching, push notification, dan offline support.
+
+👉 Kita fokus dulu ke **Dedicated Workers** karena paling umum untuk komputasi berat.
+
+---
+
+### Contoh Implementasi
+
+**main.js (Main Thread):**
+
+```javascript
+// main.js
+if (window.Worker) {
+  const myWorker = new Worker("worker.js");
+
+  // kirim pesan ke worker
+  myWorker.postMessage("Mulai perhitungan berat!");
+
+  // terima hasil dari worker
+  myWorker.onmessage = function (e) {
+    console.log("Pesan dari worker:", e.data);
+    document.getElementById("result").innerText = `Hasil: ${e.data}`;
+  };
+
+  myWorker.onerror = function (e) {
+    console.error("Kesalahan pada worker:", e.message, e.filename, e.lineno);
+  };
+} else {
+  console.log("Web Workers tidak didukung browser ini.");
+}
+
+document.getElementById("clickMe").addEventListener("click", () => {
+  alert("UI tetap responsif!");
+});
+```

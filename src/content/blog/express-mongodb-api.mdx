@@ -1,0 +1,98 @@
+---
+title: "Membangun REST API dengan Express.js dan MongoDB"
+description: "Step-by-step tutorial membuat CRUD API menggunakan Node.js, Express.js, dan MongoDB dengan best practices."
+tags: ["nodejs", "express", "mongodb", "backend"]
+date: "2025-09-19"
+image: "/images/blog/express-mongodb.png"
+readingTime: "5 min"
+published: true
+---
+
+REST API adalah fondasi aplikasi modern. Di artikel ini kita akan membangun **CRUD API** lengkap dengan Express.js + MongoDB.
+
+## 1. Setup Project
+
+```bash
+npm init -y
+npm install express mongoose cors dotenv
+```
+
+Buat file `.env`:
+
+```
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/mydb
+```
+
+## 2. Basic Server
+
+```js
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+const app = express();
+app.use(express.json());
+
+mongoose.connect(process.env.MONGO_URI);
+
+app.listen(process.env.PORT, () => console.log("Server running"));
+```
+
+## 3. Model & Schema
+
+```js
+const UserSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, unique: true, required: true },
+});
+
+const User = mongoose.model("User", UserSchema);
+```
+
+## 4. Routes
+
+```js
+// Create
+app.post("/users", async (req, res) => {
+  try {
+    const user = new User(req.body);
+    await user.save();
+    res.status(201).json(user);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Read
+app.get("/users", async (req, res) => {
+  const users = await User.find();
+  res.json(users);
+});
+
+// Update
+app.put("/users/:id", async (req, res) => {
+  const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.json(user);
+});
+
+// Delete
+app.delete("/users/:id", async (req, res) => {
+  await User.findByIdAndDelete(req.params.id);
+  res.json({ message: "Deleted" });
+});
+```
+
+## 5. Best Practices
+
+- Gunakan folder structure (routes, controllers, models).
+- Validasi input dengan `Joi` atau `Zod`.
+- Implement JWT authentication.
+- Logging dengan `morgan` atau `winston`.
+
+## 6. Conclusion
+
+Dengan setup ini, kita punya **API yang siap dikembangkan lebih lanjut**. Bisa ditambahkan auth, file upload, hingga deployment ke cloud 🚀.

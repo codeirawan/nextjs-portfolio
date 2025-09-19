@@ -1,0 +1,54 @@
+---
+title: "Dockerizing Node.js App untuk Deployment Cepat"
+description: "Belajar cara membuat container Docker untuk aplikasi Node.js sehingga lebih mudah di-deploy ke server."
+tags: ["docker", "nodejs", "devops"]
+date: "2025-09-19"
+image: "/images/blog/docker-node.png"
+readingTime: "3 min"
+published: true
+---
+
+Deploy manual sering ribet. Solusinya: **Dockerize your app!** 🐳
+
+## 1. Apa Itu Docker?
+
+Docker adalah platform containerization yang memungkinkan aplikasi berjalan konsisten di berbagai environment. No more "works on my machine".
+
+## 2. Dockerfile untuk Node.js
+
+```dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+## 3. Build & Run
+
+```bash
+docker build -t my-node-app .
+docker run -p 3000:3000 my-node-app
+```
+
+## 4. Optimizing for Production
+
+- Gunakan **multi-stage build** untuk lebih kecil image size.
+- Tambahkan `.dockerignore` untuk exclude files.
+- Set environment variables via `-e` atau Docker Compose.
+
+## 5. Common Mistakes
+
+1. Copy seluruh `node_modules` → bikin image besar.
+2. Tidak expose port dengan benar.
+3. Menyimpan secrets di Dockerfile (harus pakai env vars).
+
+## 6. Conclusion
+
+Dengan Docker, deploy Node.js app jadi **lebih cepat, scalable, dan portable**. Step selanjutnya: integrasi dengan Kubernetes untuk auto-scaling 🚀.

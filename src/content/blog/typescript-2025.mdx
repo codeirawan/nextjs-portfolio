@@ -1,0 +1,69 @@
+---
+title: "Kenapa TypeScript Wajib Dipakai di 2025"
+description: "TypeScript semakin dominan di ekosistem JavaScript modern. Pelajari alasan kenapa TS jadi skill wajib di 2025."
+tags: ["typescript", "javascript", "web development"]
+date: "2025-09-19"
+published: true
+image: "/images/blog/typescript-2025.png"
+readingTime: "3 min"
+---
+
+Di tahun 2025, TypeScript bukan lagi "optional skill", tapi sudah jadi **industry standard**. Banyak perusahaan besar seperti Netflix, Airbnb, Gojek, dan Tokopedia sudah melakukan migrasi penuh.
+
+## 1. Apa Itu TypeScript?
+
+TypeScript adalah **superset dari JavaScript** yang menambahkan static typing. Semua code JS valid adalah code TS, tapi TS punya fitur tambahan: type annotations, interfaces, generics, dll.
+
+```ts
+function greet(name: string): string {
+  return `Hello, ${name}`
+}
+```
+
+## 2. Benefits of TypeScript
+
+- **Catch errors early** → bug ketahuan saat compile, bukan runtime.  
+- **Better tooling** → IDE auto-completion, refactor, dan jump-to-definition.  
+- **Code readability** → lebih jelas struktur data dan kontrak function.  
+- **Maintainability** → project besar lebih terkontrol.
+
+## 3. Migration Guide
+
+Kalau project lama masih pakai JS, berikut tips migrasi:
+
+1. Tambah `tsconfig.json` minimal config.  
+2. Rename file dari `.js` ke `.ts` secara bertahap.  
+3. Gunakan `any` sementara, lalu refine type definitions.  
+4. Tambahkan ESLint + Prettier untuk konsistensi.
+
+## 4. Real World Example
+
+Tanpa TS:
+
+```js
+function add(a, b) {
+  return a + b
+}
+```
+
+Bug muncul kalau `add("1", 2)` → output `"12"`.
+
+Dengan TS:
+
+```ts
+function add(a: number, b: number): number {
+  return a + b
+}
+```
+
+Compile error langsung muncul.
+
+## 5. Trend 2025
+
+- Semua major framework (Next.js, Angular, Remix) support TS by default.  
+- Banyak open-source libs drop dukungan JS plain.  
+- Low-level tools (Bun, Deno) juga built-in TS support.
+
+## 6. Conclusion
+
+Kalau kamu serius di web dev, **belajar TypeScript adalah investasi terbaik**. Skill ini bikin code lebih robust, teamwork lebih mudah, dan peluang kerja makin luas 🚀.

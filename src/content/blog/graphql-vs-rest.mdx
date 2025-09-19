@@ -1,0 +1,62 @@
+---
+title: "GraphQL vs REST: Mana yang Lebih Cocok?"
+description: "Pelajari perbedaan GraphQL dengan REST API, kapan sebaiknya digunakan, dan hybrid pattern yang populer di 2025."
+tags: ["graphql", "rest api", "backend"]
+date: "2025-09-19"
+published: true
+image: "/images/blog/graphql-vs-rest.png"
+readingTime: "2 min"
+---
+
+Banyak developer bingung: **REST vs GraphQL, pilih yang mana?** Artikel ini membahas dengan contoh nyata dan best practices.
+
+## 1. REST Recap
+
+REST menggunakan konsep **resources** dengan multiple endpoints. Contoh:
+
+```
+GET /users
+GET /users/:id
+POST /users
+```
+
+Kelebihan: simple, caching mudah.
+Kekurangan: overfetching & underfetching.
+
+## 2. GraphQL Overview
+
+GraphQL adalah query language untuk API yang memungkinkan client **meminta data sesuai kebutuhan**.
+
+Contoh query:
+
+```graphql
+query {
+  user(id: 1) {
+    name
+    email
+    posts {
+      title
+    }
+  }
+}
+```
+
+## 3. Comparison
+
+| Aspect        | REST                      | GraphQL                    |
+| ------------- | ------------------------- | -------------------------- |
+| Endpoints     | Multiple                  | Single                     |
+| Data Fetching | Fixed response            | Flexible query             |
+| Performance   | Bisa overfetch/underfetch | Optimized for client needs |
+| Tooling       | Mature & stable           | Growing ecosystem          |
+
+## 4. Hybrid Approach
+
+Di 2025, banyak perusahaan pakai hybrid:
+
+- REST untuk simple public API.
+- GraphQL untuk internal apps dengan complex data needs.
+
+## 5. Conclusion
+
+Tidak ada "one-size-fits-all". Pilih sesuai **konteks aplikasi**. Untuk microservices modern, GraphQL makin populer 🚀.
