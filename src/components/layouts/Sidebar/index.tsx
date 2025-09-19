@@ -2,7 +2,7 @@ import BreakLine from "@/components/elements/BreakLine";
 import clsx from "clsx";
 import SidebarHeader from "./SidebarHeader";
 import SidebarNav from "./SidebarNav";
-import VisitCard from "@/components/cards/VisitCard";
+import GithubCard from "@/components/cards/GithubCard";
 
 export default function Sidebar() {
   return (
@@ -18,7 +18,7 @@ export default function Sidebar() {
       <BreakLine decoration="border-dashed" />
       <SidebarNav />
       <BreakLine classname="md:hidden lg:block" />
-      <VisitCard display="md:hidden lg:flex" />
+      <GithubCard display="md:hidden lg:flex" />
     </div>
   );
 }
