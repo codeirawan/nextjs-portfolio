@@ -1,8 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
+
+const nextConfig = withMDX({
   images: {
     domains: ["res.cloudinary.com", "i.scdn.co", "www.gravatar.com", "github.com"],
   },
-};
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+})
 
-module.exports = nextConfig;
+module.exports = nextConfig
