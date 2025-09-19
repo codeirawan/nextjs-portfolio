@@ -27,7 +27,7 @@ export default function Hero() {
 
       <p className="secondary mb-4 text-sm leading-relaxed md:text-lg">
         an experienced Front-End Web Developer with expertise in <span className="gradient__text"> React & Vue. </span><br />
-        With over 4 years of hands-on experience, I excel in crafting polished websites.
+        With over 5 years of hands-on experience, I excel in crafting polished websites.
         Proficient in <span className="gradient__text"> Laravel </span> for backend and full-stack development. <br />
         Let&apos;s collaborate and bring your ideas to life.
       </p>
