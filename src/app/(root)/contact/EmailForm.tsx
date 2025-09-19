@@ -4,11 +4,10 @@ import Textarea from "@/components/elements/Textarea";
 import axios from "axios";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import * as React from "react";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
+import { useTheme } from "next-themes";
 
 interface EmailForm {
   name: string;
@@ -18,8 +17,7 @@ interface EmailForm {
 }
 
 export default function EmailForm() {
-  const theme = useTheme();
-
+  const { theme } = useTheme();
   const [isLoading, setIsLoading] = React.useState(false);
   const [buttonText, setButtonText] = React.useState("Send Message");
 
@@ -34,11 +32,44 @@ export default function EmailForm() {
     try {
       setIsLoading(true);
       const response = await axios.post("/api/email", payload);
-      response.status === 200 && toast.success(response.data.message);
-      reset();
-      setIsLoading(false);
+
+      if (response.status === 200) {
+        toast.success(response.data.message || "Message sent successfully!", {
+          style: {
+            background: theme === "dark" ? "#1f2937" : "#f3f4f6",
+            color: theme === "dark" ? "#f3f4f6" : "#1f2937",
+          },
+          iconTheme: {
+            primary: theme === "dark" ? "#22c55e" : "#16a34a",
+            secondary: theme === "dark" ? "#f3f4f6" : "#1f2937",
+          },
+        });
+        reset();
+      } else {
+        toast.error("Failed to send message.", {
+          style: {
+            background: theme === "dark" ? "#1f2937" : "#f3f4f6",
+            color: theme === "dark" ? "#f3f4f6" : "#1f2937",
+          },
+          iconTheme: {
+            primary: "#ef4444",
+            secondary: theme === "dark" ? "#f3f4f6" : "#1f2937",
+          },
+        });
+      }
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      toast.error("Something went wrong.", {
+        style: {
+          background: theme === "dark" ? "#1f2937" : "#f3f4f6",
+          color: theme === "dark" ? "#f3f4f6" : "#1f2937",
+        },
+        iconTheme: {
+          primary: "#ef4444",
+          secondary: theme === "dark" ? "#f3f4f6" : "#1f2937",
+        },
+      });
+    } finally {
       setIsLoading(false);
     }
   };
@@ -111,17 +142,14 @@ export default function EmailForm() {
           {buttonText}
         </button>
 
-        <ToastContainer
+        <Toaster
           position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme={theme.theme === "dark" ? "dark" : "light"}
+          toastOptions={{
+            style: {
+              background: theme === "dark" ? "#1f2937" : "#f3f4f6",
+              color: theme === "dark" ? "#f3f4f6" : "#1f2937",
+            },
+          }}
         />
       </form>
     </motion.section>
