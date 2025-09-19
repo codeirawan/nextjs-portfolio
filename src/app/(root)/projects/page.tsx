@@ -1,10 +1,6 @@
-import ProjectCard from "@/components/cards/ProjectCard";
-import PageTitle from "@/components/elements/PageTitle";
-import { PROJECT_CARD_CONTENTS } from "@/constants/projects";
-import { shuffleArray } from "@/utils/shuffle"; // <-- import shuffle
-import type { Metadata } from "next";
+import ProjectsClient from "./ProjectsClient";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Projects X-codeirawan",
   description:
     "Discover my portfolio of fullstack development projects, a curated collection showcasing my skills and creativity in web design and development. Immerse yourself in a diverse range of web solutions and innovative designs.",
@@ -13,32 +9,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Projects() {
-  // Shuffle projects each render
-  const shuffledProjects = shuffleArray(PROJECT_CARD_CONTENTS);
-
-  return (
-    <div className="p-8">
-      <PageTitle
-        title="Projects"
-        description="Showcase of my works on fullstack development."
-      />
-
-      <section className="lg:mb-20">
-        <ul className="grid gap-8 sm:grid-cols-2">
-          {shuffledProjects.map((content, index) => (
-            <ProjectCard
-              key={index}
-              url={content.url}
-              title={content.name}
-              description={content.description}
-              techStack={content.techStack}
-              image={content.image}
-              imageAlt={content.imageAlt}
-            />
-          ))}
-        </ul>
-      </section>
-    </div>
-  );
+export default function ProjectsPage() {
+  return <ProjectsClient />;
 }
