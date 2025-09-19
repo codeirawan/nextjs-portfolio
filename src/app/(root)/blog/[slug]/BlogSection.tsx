@@ -2,28 +2,28 @@
 
 import * as React from "react";
 import BlogCard from "@/components/cards/BlogCard";
-import { BlogItem } from "@/types";
+import { BlogMeta } from "@/types";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import Search from "../Search";
 
-export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
+export default function BlogSection({ blogs }: { blogs: BlogMeta[] }) {
   const [search, setSearch] = React.useState<string>("");
-  const [sortedBlogs, setSortedBlogs] = React.useState<BlogItem[]>([]);
-  const [filteredBlogs, setFilteredBlogs] = React.useState<BlogItem[]>([]);
+  const [selectedTags, setSelectedTags] = React.useState<string[]>([]);
+  const [sortedBlogs, setSortedBlogs] = React.useState<BlogMeta[]>([]);
+  const [filteredBlogs, setFilteredBlogs] = React.useState<BlogMeta[] | null>(
+    null,
+  );
+  const [loading, setLoading] = React.useState(true);
 
   const sortBlogsByDate = React.useCallback(() => {
-    if (!Array.isArray(blogs)) {
-      return;
-    }
-
-    const sorted = [...blogs];
-    sorted.sort((a, b) => {
-      const dateA = new Date(a.releaseDate);
-      const dateB = new Date(b.releaseDate);
-      return dateB.getTime() - dateA.getTime();
-    });
+    if (!Array.isArray(blogs)) return;
+    const sorted = [...blogs].sort(
+      (a, b) =>
+        new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime(),
+    );
     setSortedBlogs(sorted);
+    setLoading(false);
   }, [blogs]);
 
   React.useEffect(() => {
@@ -31,58 +31,39 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
   }, [sortBlogsByDate]);
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const lowercaseInput = event.target.value.toLowerCase();
-    setSearch(lowercaseInput);
+    setSearch(event.target.value.toLowerCase());
   };
-
-  React.useEffect(() => {
-    const filtered = sortedBlogs.filter(
-      (blog) =>
-        blog.title.toLowerCase().includes(search.toLowerCase()) ||
-        blog.description.toLowerCase().includes(search.toLowerCase()) ||
-        search
-          .toLowerCase()
-          .split(" ")
-          .every((tag) => blog.tags.includes(tag))
-    );
-    setFilteredBlogs(filtered);
-  }, [search, sortedBlogs]);
 
   const toggleTag = (tag: string) => {
-    const tagsInSearch = search.split(" ").filter((t) => t.trim() !== "");
-    if (tagsInSearch.includes(tag)) {
-      setSearch(tagsInSearch.filter((t) => t !== tag).join(" "));
-    } else {
-      setSearch([...tagsInSearch, tag].join(" "));
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
+    );
+  };
+
+  const checkTagged = (tag: string) => selectedTags.includes(tag);
+
+  const checkDisabled = (_tag: string) => false;
+
+  React.useEffect(() => {
+    if (!sortedBlogs.length) return;
+    let filtered = sortedBlogs;
+
+    if (search) {
+      filtered = filtered.filter(
+        (blog) =>
+          blog.title.toLowerCase().includes(search) ||
+          blog.description.toLowerCase().includes(search),
+      );
     }
-  };
 
-  const checkTagged = (tag: string) => {
-    return search.split(" ").includes(tag);
-  };
+    if (selectedTags.length > 0) {
+      filtered = filtered.filter((blog) =>
+        selectedTags.every((tag) => blog.tags.includes(tag)),
+      );
+    }
 
-  const checkDisabled = (tag: string) => {
-    if (search === "") return false;
-
-    const searchTerms = search
-      .toLowerCase()
-      .split(" ")
-      .filter((t) => t.trim() !== "");
-
-    const relatedBlogs = sortedBlogs.filter((blog) =>
-      searchTerms.some(
-        (term) =>
-          blog.title.toLowerCase().includes(term) ||
-          blog.description.toLowerCase().includes(term) ||
-          blog.tags.includes(term)
-      )
-    );
-
-    return (
-      !relatedBlogs.some((blog) => blog.tags.includes(tag)) &&
-      !searchTerms.includes(tag)
-    );
-  };
+    setFilteredBlogs(filtered);
+  }, [search, selectedTags, sortedBlogs]);
 
   return (
     <section>
@@ -94,14 +75,16 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
         checkDisabled={checkDisabled}
       />
 
-      {filteredBlogs.length > 0 ? (
+      {loading || filteredBlogs === null ? (
+        <div className="pb-12 pt-20 text-center">Loading blogs...</div>
+      ) : filteredBlogs.length > 0 ? (
         <motion.ul
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
           className="mt-4 grid gap-4 sm:grid-cols-2"
         >
-          {filteredBlogs.map((blog: BlogItem) => (
+          {filteredBlogs.map((blog) => (
             <BlogCard
               key={blog._id}
               id={blog._id}
@@ -113,7 +96,6 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
               releaseDate={blog.releaseDate}
               description={blog.description}
               slug={blog.slug.current}
-              checkTagged={checkTagged}
             />
           ))}
         </motion.ul>
@@ -122,7 +104,7 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
           className={clsx(
             "pb-12 pt-20",
             "lg:flex lg:justify-center",
-            "lg:h-80 lg:pb-0 lg:pt-8"
+            "lg:h-80 lg:pb-0 lg:pt-8",
           )}
         >
           <h2
@@ -130,7 +112,7 @@ export default function BlogSection({ blogs }: { blogs: BlogItem[] }) {
               "gradient__text",
               "m-auto w-fit",
               "text-lg  font-bold",
-              "md:text-xl"
+              "md:text-xl",
             )}
           >
             Sorry, not found :(

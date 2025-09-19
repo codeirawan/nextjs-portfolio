@@ -1,17 +1,16 @@
 import PageTitle from "@/components/elements/PageTitle";
 import type { Metadata } from "next";
 import BlogSection from "./[slug]/BlogSection";
+import { getAllBlogs } from "@/lib/mdx";
 
 export const metadata: Metadata = {
   title: "Blog X-codeirawan",
-  description:
-    "Reflections, cognitive models, and instructional content related to the realm of front-end development. Adapt your mental framework to bring more predictability to front-end development.",
-  alternates: {
-    canonical: "https://codeirawan.vercel.app/blog",
-  },
+  description: "Share thoughts and tutorials on web development.",
+  alternates: { canonical: "https://codeirawan.vercel.app/blog" },
 };
 
 export default async function Blog() {
+  const blogs = await getAllBlogs();
 
   return (
     <div className="p-8">
@@ -19,7 +18,7 @@ export default async function Blog() {
         title="Blog"
         description="Share thoughts and tutorials on web development."
       />
-      <BlogSection blogs={[]} />
+      <BlogSection blogs={blogs} />
     </div>
   );
 }

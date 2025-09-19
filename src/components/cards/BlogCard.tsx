@@ -58,7 +58,7 @@ export default function BlogCard({
         <div className="relative">
           <Image
             src={image}
-            alt="Photo taken from Unsplash"
+            alt={image.split("/").pop()?.split(".")[0] ?? "Image"}
             width={1200}
             height={480}
             className="h-auto w-auto rounded-t-md"

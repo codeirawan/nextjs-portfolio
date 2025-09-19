@@ -1,7 +1,7 @@
-export interface BlogItem {
+export interface BlogMeta {
   releaseDate: string;
   description: string;
-  tags: Array<string>;
+  tags: string[];
   _id: string;
   title: string;
   slug: {
@@ -11,7 +11,10 @@ export interface BlogItem {
   readingTime: string;
   views: number;
   image: string;
-  content: any;
+}
+
+export interface BlogItem extends BlogMeta {
+  content: string;
 }
 
 export interface Headings {
