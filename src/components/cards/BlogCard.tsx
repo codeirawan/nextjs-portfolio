@@ -31,7 +31,7 @@ export default function BlogCard({
 }: Props) {
   const handleCardClick = async () => {
     try {
-      console.log('page view');
+      console.log("page view");
     } catch (error) {
       console.error(error);
       throw error;
@@ -55,13 +55,12 @@ export default function BlogCard({
         aria-label={`Read more about the ${title} article`}
         className={clsx("group", "flex flex-col", "h-full")}
       >
-        <div className="relative">
+        <div className="relative h-48 w-full overflow-hidden rounded-t-md">
           <Image
             src={image}
             alt={image.split("/").pop()?.split(".")[0] ?? "Image"}
-            width={1200}
-            height={480}
-            className="h-auto w-auto rounded-t-md"
+            fill
+            className="object-cover"
             priority={true}
           />
 
