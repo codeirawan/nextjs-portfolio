@@ -86,5 +86,13 @@
     "tech": ["PHP", "WordPress"],
     "image": "https://github.com/codeirawan/xendit-motopress-integration/blob/main/image/readme/1753987465865.png?raw=true",
     "imageAlt": "xendit motopress hotel booking integration screenshot"
+  },
+  {
+    "url": "https://litahusin.com/",
+    "name": "litahusin digital galery",
+    "description": "A personal digital gallery showcasing art paintings.",
+    "tech": ["PHP", "Laravel"],
+    "image": "https://litahusin.com/images/mtc.jpg",
+    "imageAlt": "screenshot of litahusin personal digital art gallery"
   }
 ]
