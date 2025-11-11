@@ -1,25 +1,10 @@
-// 🎨 30 Color Palettes
+// 🎨 Premier League Inspired Color Palettes
 export const COLOR_PALETTES = [
-  { primary: "#0F172A", secondary: "#38BDF8", name: "Dark Terminal & Cyan" },
-  { primary: "#1E293B", secondary: "#FACC15", name: "Dark Slate & Yellow" },
-  { primary: "#111827", secondary: "#34D399", name: "Night Mode & Green" },
-  { primary: "#1E1E2F", secondary: "#C084FC", name: "Code Editor & Purple" },
-  { primary: "#0F172A", secondary: "#F472B6", name: "Dark Terminal & Pink" },
-  { primary: "#1E293B", secondary: "#F97316", name: "Slate & Orange" },
-  { primary: "#111827", secondary: "#60A5FA", name: "Dark Mode & Blue" },
-  { primary: "#1E1E2F", secondary: "#FACC15", name: "Editor Background & Yellow" },
-  { primary: "#0F172A", secondary: "#22D3EE", name: "Terminal Cyan & Aqua" },
-  { primary: "#1E293B", secondary: "#A78BFA", name: "Slate & Soft Violet" },
-  { primary: "#111827", secondary: "#F87171", name: "Dark Mode & Coral" },
-  { primary: "#1E1E2F", secondary: "#34D399", name: "Editor Background & Green" },
-  { primary: "#0F172A", secondary: "#F472B6", name: "Terminal Pink & Magenta" },
-  { primary: "#1E293B", secondary: "#38BDF8", name: "Slate & Cyan" },
-  { primary: "#111827", secondary: "#FACC15", name: "Dark Mode & Yellow" },
-  { primary: "#1E1E2F", secondary: "#C084FC", name: "Editor & Purple" },
-  { primary: "#0F172A", secondary: "#60A5FA", name: "Terminal Blue & Sky" },
-  { primary: "#1E293B", secondary: "#F97316", name: "Slate & Orange" },
-  { primary: "#111827", secondary: "#22D3EE", name: "Dark Mode & Aqua" },
-  { primary: "#1E1E2F", secondary: "#A78BFA", name: "Editor & Soft Violet" }
+  { primary: "#360D3A", secondary: "#FF2882", name: "Premier League Purple" },
+  { primary: "#00FF85", secondary: "#360D3A", name: "Neon Green & Deep Purple" },
+  { primary: "#95C11F", secondary: "#512D6D", name: "Lime Green & Royal Purple" },
+  { primary: "#05F0FF", secondary: "#29003D", name: "Cyan & Dark Violet" },
+  { primary: "#FF005C", secondary: "#2E0057", name: "Magenta & Indigo" },
 ];
 
 // 🔄 Dynamic Color Selection Functions
