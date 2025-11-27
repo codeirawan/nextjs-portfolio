@@ -3,7 +3,7 @@ import {
   FiGithub,
   FiInstagram,
 } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 
 const ICON_SIZE: number = 20;
 
@@ -31,5 +31,11 @@ export const CONTACT_ITEMS = [
     url: "https://wa.me/628999393662",
     label: "WhatsApp",
     backgroundColor: "#25D366",
+  },
+  {
+    icon: <FaTelegramPlane size={ICON_SIZE} />,
+    url: "https://t.me/codeirawan",
+    label: "Telegram",
+    backgroundColor: "#0088cc",
   },
 ];
