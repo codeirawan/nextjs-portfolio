@@ -24,7 +24,7 @@
     "imageAlt": "kushikatsu daruma landing page screenshot"
   },
   {
-    "url": "https://bukupintar.app/",
+    "url": "https://bridgenote.asia/",
     "name": "bukupintar",
     "description": "Cloud accounting software aids Indonesian and Japanese accountants, effectively managing finances for over 120 Japanese company subsidiaries.",
     "tech": ["React", "Laravel", "Inertia", "Docker"],
@@ -32,7 +32,7 @@
     "imageAlt": "bukupintar screenshot"
   },
   {
-    "url": "https://yoredu.app/",
+    "url": "https://astro-codeirawan.vercel.app/",
     "name": "yoredu",
     "description": "e-Course platform facilitates perpetual learning, serving as an expansive gateway to endless educational opportunities for global knowledge seekers.",
     "tech": ["Laravel", "Bootstrap"],
@@ -40,7 +40,7 @@
     "imageAlt": "yoredu e-courses screenshot"
   },
   {
-    "url": "https://projects.co.id/user/my_projects/show_thread/8e211b/slicing-2-image-to-responsive-page-with-tailwind",
+    "url": "https://projects.co.id/public/past_projects/view/8e211b/slicing-2-image-to-responsive-page-with-tailwind",
     "name": "slicing like airbnb",
     "description": "Slicing images to responsive page with Tailwind CSS.",
     "tech": ["Vue", "Nuxt", "Tailwind CSS", "Vercel"],
