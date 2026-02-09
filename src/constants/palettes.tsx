@@ -1,9 +1,6 @@
 // 🎨 Premier League Inspired Color Palettes
 export const COLOR_PALETTES = [
-  { primary: "#360D3A", secondary: "#FF2882", name: "Premier League Purple" },
-  { primary: "#360D3A", secondary: "#00FF85", name: "Neon Green & Deep Purple" },
   { primary: "#95C11F", secondary: "#512D6D", name: "Lime Green & Royal Purple" },
-  { primary: "#2E0057", secondary: "#FF005C", name: "Magenta & Indigo" },
 ];
 
 // 🔄 Dynamic Color Selection Functions
