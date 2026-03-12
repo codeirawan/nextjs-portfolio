@@ -24,7 +24,7 @@
     "imageAlt": "kushikatsu daruma landing page screenshot"
   },
   {
-    "url": "https://bridgenote.asia/",
+    "url": "https://bridgenote-asia.vercel.app/",
     "name": "bukupintar",
     "description": "Cloud accounting software aids Indonesian and Japanese accountants, effectively managing finances for over 120 Japanese company subsidiaries.",
     "tech": ["React", "Laravel", "Inertia", "Docker"],
