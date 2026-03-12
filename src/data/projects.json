@@ -92,7 +92,7 @@
     "name": "litahusin digital galery",
     "description": "A personal digital gallery showcasing art paintings.",
     "tech": ["PHP", "Laravel"],
-    "image": "https://litahusin.com/images/mtc.jpg",
+    "image": "/images/projects/litahusin.png",
     "imageAlt": "screenshot of litahusin personal digital art gallery"
   }
 ]
