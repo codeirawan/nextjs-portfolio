@@ -94,5 +94,61 @@
     "tech": ["PHP", "Laravel"],
     "image": "/images/projects/litahusin.png",
     "imageAlt": "screenshot of litahusin personal digital art gallery"
+  },
+  {
+    "url": "https://sainskids.vercel.app/",
+    "name": "sainskids",
+    "description": "Interactive science learning platform for kids with engaging visuals and simple explanations to build early scientific curiosity.",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "image": "",
+    "imageAlt": "sainskids educational platform screenshot"
+  },
+  {
+    "url": "https://bacajam.vercel.app/",
+    "name": "bacajam",
+    "description": "Reading and literacy platform designed to improve children's reading habits through structured and engaging content.",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "image": "",
+    "imageAlt": "bacajam reading platform screenshot"
+  },
+  {
+    "url": "https://bahasaindo.vercel.app/",
+    "name": "bahasaindo",
+    "description": "Indonesian language learning platform focused on grammar, vocabulary, and structured exercises for students.",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "image": "",
+    "imageAlt": "bahasaindo learning platform screenshot"
+  },
+  {
+    "url": "https://islamqu.vercel.app/",
+    "name": "islamqu",
+    "description": "Islamic learning platform providing accessible educational content on religion, daily practices, and values.",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "image": "",
+    "imageAlt": "islamqu platform screenshot"
+  },
+  {
+    "url": "https://englishsd.vercel.app/",
+    "name": "englishsd",
+    "description": "English learning platform for elementary students with simple lessons, exercises, and interactive content.",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "image": "",
+    "imageAlt": "englishsd learning platform screenshot"
+  },
+  {
+    "url": "https://matematiq.vercel.app/",
+    "name": "matematiq",
+    "description": "Mathematics learning platform with structured materials and exercises to strengthen problem-solving skills.",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "image": "",
+    "imageAlt": "matematiq platform screenshot"
+  },
+  {
+    "url": "https://idx-screener.vercel.app/",
+    "name": "idx screener",
+    "description": "Stock screening tool for the Indonesian market, enabling users to filter and analyze IDX-listed companies efficiently.",
+    "tech": ["React", "Tailwind CSS", "Vercel"],
+    "image": "",
+    "imageAlt": "idx screener stock analysis tool screenshot"
   }
 ]
