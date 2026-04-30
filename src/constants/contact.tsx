@@ -26,12 +26,12 @@ export const CONTACT_ITEMS = [
   //   label: "Instagram",
   //   backgroundColor: "linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7)",
   // },
-  {
-    icon: <FaWhatsapp size={ICON_SIZE} />,
-    url: "https://wa.me/628999393662",
-    label: "WhatsApp",
-    backgroundColor: "#25D366",
-  },
+  // {
+  //   icon: <FaWhatsapp size={ICON_SIZE} />,
+  //   url: "https://wa.me/628999393662",
+  //   label: "WhatsApp",
+  //   backgroundColor: "#25D366",
+  // },
   {
     icon: <FaTelegramPlane size={ICON_SIZE} />,
     url: "https://t.me/codeirawan",
