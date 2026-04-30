@@ -5,7 +5,7 @@ const gravatarHash = CryptoJS.MD5(gravatarEmail.trim().toLowerCase()).toString()
 
 export const PROFILE_PICTURE_URL = `https://www.gravatar.com/avatar/${gravatarHash}?s=200&d=identicon`;
 
-export const CV_URL = "/Ade_Irawan_Remote_Fullstack_Resume.pdf";
+export const CV_URL = "/";
 
 export const BLOG_API_ENDPOINT =
   process.env.NODE_ENV === "production"
