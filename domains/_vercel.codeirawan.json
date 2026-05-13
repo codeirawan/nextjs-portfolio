@@ -4,6 +4,9 @@
     "email": "codeirawan@gmail.com"
   },
   "records": {
-    "TXT": "vc-domain-verify=codeirawan.is-a.dev,89be94b7c993b45cff1a"
+    "TXT": [
+      "vc-domain-verify=codeirawan.is-a.dev,89be94b7c993b45cff1a",
+      "vc-domain-verify=www.codeirawan.is-a.dev,7ea3ed484684223edb99"
+    ]
   }
 }
